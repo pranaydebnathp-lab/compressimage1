@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pranaydebnathp-lab.github.io/compressimage1/sitemap.xml
