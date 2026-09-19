@@ -1,17 +1,72 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Compressify - Image & PDF Compressor</title>
+  <title>Compressify - Free Online Image & PDF File Compressor</title>
+
+  <meta name="description"
+    content="Compress JPG, PNG, WebP images and PDF files online with Compressify. Reduce file size using a simple browser-based compressor.">
+
+  <meta name="keywords"
+    content="image compressor, PDF compressor, JPG compressor, PNG compressor, WebP compressor, free file compressor">
+
+  <meta name="author" content="Compressify">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2563eb">
+
+  <!-- Canonical URL -->
+  <link rel="canonical"
+    href="https://pranaydebnathp-lab.github.io/compressimage1/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+
+  <!-- Open Graph SEO -->
+  <meta property="og:title"
+    content="Compressify - Free Online File Compressor">
+
+  <meta property="og:description"
+    content="Compress images and PDF files online with Compressify.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url"
+    content="https://pranaydebnathp-lab.github.io/compressimage1/">
+
+  <meta property="og:image"
+    content="https://pranaydebnathp-lab.github.io/compressimage1/images/favicon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+
+  <meta name="twitter:title"
+    content="Compressify - Free Online File Compressor">
+
+  <meta name="twitter:description"
+    content="Compress images and PDF files online with Compressify.">
 
   <!-- Connect CSS -->
   <link rel="stylesheet" href="./style.css">
 
   <!-- PDF Library -->
   <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Compressify",
+    "url": "https://pranaydebnathp-lab.github.io/compressimage1/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "description": "Browser-based image and PDF file compression tool."
+  }
+  </script>
 </head>
 
 <body>
@@ -21,14 +76,18 @@
 
     <a href="#home" class="logo">Compressify</a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+    <button class="menu-btn"
+      id="menuBtn"
+      aria-label="Toggle navigation">
       ☰
     </button>
 
     <nav id="navMenu">
       <a href="#home">Home</a>
+      <a href="#compressor">Compressor</a>
       <a href="#about">About</a>
       <a href="#privacy">Privacy</a>
+      <a href="#how-it-works">How It Works</a>
       <a href="#contact">Contact</a>
       <a href="#terms">Terms</a>
     </nav>
@@ -41,7 +100,9 @@
 
     <div class="hero-content">
 
-      <div class="badge">FAST • SIMPLE • EASY</div>
+      <div class="badge">
+        FAST • SIMPLE • EASY
+      </div>
 
       <h1>
         Compress Your Files<br>
@@ -49,8 +110,8 @@
       </h1>
 
       <p>
-        Reduce image and PDF file sizes quickly using
-        our simple online compression tool.
+        Compress JPG, PNG, WebP images and PDF files online.
+        Reduce file size quickly with our simple browser-based tool.
       </p>
 
       <a href="#compressor" class="hero-btn">
@@ -62,9 +123,11 @@
   </section>
 
 
-  <!-- COMPRESSOR SECTION -->
+  <!-- MAIN CONTENT -->
   <main class="main-container">
 
+
+    <!-- COMPRESSOR SECTION -->
     <section class="compressor-card" id="compressor">
 
       <div class="section-title">
@@ -73,7 +136,9 @@
 
         <div>
           <h2>File Compressor</h2>
-          <p>Choose a file and process it in your browser.</p>
+          <p>
+            Choose a file and process it in your browser.
+          </p>
         </div>
 
       </div>
@@ -82,13 +147,13 @@
       <!-- FILE TYPE -->
       <div class="form-group">
 
-        <label for="fileType">Select File Type</label>
+        <label for="fileType">
+          Select File Type
+        </label>
 
         <select id="fileType">
-
           <option value="image">Image</option>
           <option value="pdf">PDF</option>
-
         </select>
 
       </div>
@@ -101,7 +166,9 @@
 
         <h3>Upload Your File</h3>
 
-        <p>Choose a file and upload it for compression.</p>
+        <p>
+          Choose a file and upload it for compression.
+        </p>
 
         <p class="supported-files">
           JPG, PNG, WebP or PDF
@@ -112,11 +179,11 @@
         </label>
 
         <input
-  type="file"
-  id="fileInput"
-  accept=".jpg,.jpeg,.png,.webp,.pdf"
-  hidden
->
+          type="file"
+          id="fileInput"
+          accept="image/jpeg,image/png,image/webp,application/pdf"
+          hidden
+        >
 
         <p class="file-limit">
           Maximum file size: 20 MB
@@ -128,7 +195,9 @@
       <!-- SELECTED FILE -->
       <div class="selected-file" id="selectedFile">
 
-        <span id="fileName">No file selected</span>
+        <span id="fileName">
+          No file selected
+        </span>
 
         <button id="removeFileBtn" type="button">
           ✕
@@ -148,10 +217,21 @@
 
           <select id="quality">
 
-            <option value="0.9">Low Compression</option>
-            <option value="0.7" selected>Medium Compression</option>
-            <option value="0.5">High Compression</option>
-            <option value="0.3">Maximum Compression</option>
+            <option value="0.9">
+              Low Compression
+            </option>
+
+            <option value="0.7" selected>
+              Medium Compression
+            </option>
+
+            <option value="0.5">
+              High Compression
+            </option>
+
+            <option value="0.3">
+              Maximum Compression
+            </option>
 
           </select>
 
@@ -166,11 +246,25 @@
 
           <select id="maxWidth">
 
-            <option value="original">Original Size</option>
-            <option value="1920">1920 px</option>
-            <option value="1280" selected>1280 px</option>
-            <option value="800">800 px</option>
-            <option value="600">600 px</option>
+            <option value="original">
+              Original Size
+            </option>
+
+            <option value="1920">
+              1920 px
+            </option>
+
+            <option value="1280" selected>
+              1280 px
+            </option>
+
+            <option value="800">
+              800 px
+            </option>
+
+            <option value="600">
+              600 px
+            </option>
 
           </select>
 
@@ -185,9 +279,17 @@
 
           <select id="imageFormat">
 
-            <option value="image/jpeg" selected>JPG</option>
-            <option value="image/webp">WebP</option>
-            <option value="image/png">PNG</option>
+            <option value="image/jpeg" selected>
+              JPG
+            </option>
+
+            <option value="image/webp">
+              WebP
+            </option>
+
+            <option value="image/png">
+              PNG
+            </option>
 
           </select>
 
@@ -197,7 +299,9 @@
 
 
       <!-- PDF SETTINGS -->
-      <div id="pdfSettings" class="settings-panel" hidden>
+      <div id="pdfSettings"
+        class="settings-panel"
+        hidden>
 
         <div class="info-box">
 
@@ -205,8 +309,8 @@
 
           <p>
             The browser will save a processed copy of the PDF.
-            This basic version does not guarantee image recompression
-            or a smaller file size.
+            This basic version does not guarantee image
+            recompression or a smaller file size.
           </p>
 
         </div>
@@ -218,8 +322,7 @@
       <button
         id="compressBtn"
         class="compress-btn"
-        type="button"
-      >
+        type="button">
 
         Compress File
 
@@ -227,62 +330,72 @@
 
 
       <!-- PROGRESS -->
-      <div class="progress-container" id="progressContainer" hidden>
+      <div
+        class="progress-container"
+        id="progressContainer"
+        hidden>
 
         <div class="progress-bar">
           <div id="progressFill"></div>
         </div>
 
-        <p id="progressText">Processing...</p>
+        <p id="progressText">
+          Processing...
+        </p>
 
       </div>
 
 
       <!-- STATUS -->
-      <div id="statusMessage" class="status-message"></div>
+      <div
+        id="statusMessage"
+        class="status-message">
+      </div>
 
 
       <!-- RESULT -->
-      <section id="resultSection" class="result-section" hidden>
+      <section
+        id="resultSection"
+        class="result-section"
+        hidden>
 
-        <div class="success-icon">✓</div>
+        <div class="success-icon">
+          ✓
+        </div>
 
-        <h2>Compression Complete!</h2>
+        <h2>
+          Compression Complete!
+        </h2>
 
         <div class="result-details">
 
           <div class="result-row">
-
             <span>Original Size</span>
             <strong id="originalSize">-</strong>
-
           </div>
 
           <div class="result-row">
-
             <span>Output Size</span>
             <strong id="compressedSize">-</strong>
-
           </div>
 
           <div class="result-row">
-
             <span>Size Change</span>
             <strong id="savingPercentage">-</strong>
-
           </div>
 
         </div>
 
-
-        <p id="resultNote" class="result-note"></p>
+        <p
+          id="resultNote"
+          class="result-note">
+        </p>
 
         <a
           id="downloadBtn"
           class="download-btn"
           href="#"
-          download
-        >
+          download>
 
           Download Compressed File
 
@@ -302,13 +415,17 @@
 
         <div>
           <h2>Why Use Compressify?</h2>
-          <p>Simple tools for your everyday files.</p>
+
+          <p>
+            Simple tools for your everyday files.
+          </p>
         </div>
 
       </div>
 
 
       <div class="features-grid">
+
 
         <div class="feature-card">
 
@@ -356,10 +473,120 @@
     </section>
 
 
-    <!-- ABOUT -->
-    <section class="content-section" id="about">
+    <!-- HOW IT WORKS -->
+    <section
+      class="content-section"
+      id="how-it-works">
 
-      <h2>About Compressify</h2>
+      <h2>
+        How Compressify Works
+      </h2>
+
+      <h3>
+        1. Select Your File
+      </h3>
+
+      <p>
+        Choose a supported image or PDF file from your device.
+      </p>
+
+      <h3>
+        2. Upload Your File
+      </h3>
+
+      <p>
+        Use the file selector to add your file to the compressor.
+      </p>
+
+      <h3>
+        3. Compress the File
+      </h3>
+
+      <p>
+        Select the available settings and start the compression process.
+      </p>
+
+      <h3>
+        4. Download the Result
+      </h3>
+
+      <p>
+        Download the processed file after the operation is complete.
+      </p>
+
+    </section>
+
+
+    <!-- SUPPORTED FILE TYPES -->
+    <section
+      class="content-section"
+      id="supported-files">
+
+      <h2>
+        Supported File Types
+      </h2>
+
+      <p>
+        Compressify supports JPG, JPEG, PNG, WebP and PDF files
+        according to the available browser processing features.
+      </p>
+
+      <ul>
+        <li>JPG and JPEG images</li>
+        <li>PNG images</li>
+        <li>WebP images</li>
+        <li>PDF documents</li>
+      </ul>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section
+      class="content-section"
+      id="faq">
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+      <h3>
+        Is Compressify free?
+      </h3>
+
+      <p>
+        Compressify is designed as a free browser-based
+        compression tool.
+      </p>
+
+      <h3>
+        Do I need to install software?
+      </h3>
+
+      <p>
+        No installation is required for the website version.
+      </p>
+
+      <h3>
+        Are files uploaded to a server?
+      </h3>
+
+      <p>
+        The frontend is designed to process files in the browser.
+        External libraries may still be loaded from their CDN.
+      </p>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section
+      class="content-section"
+      id="about">
+
+      <h2>
+        About Compressify
+      </h2>
 
       <p>
         Compressify is a browser-based file processing website
@@ -376,10 +603,14 @@
     </section>
 
 
-    <!-- PRIVACY -->
-    <section class="content-section" id="privacy">
+    <!-- PRIVACY POLICY -->
+    <section
+      class="content-section"
+      id="privacy">
 
-      <h2>Privacy Policy</h2>
+      <h2>
+        Privacy Policy
+      </h2>
 
       <p>
         Compressify's image processing takes place locally in
@@ -388,10 +619,10 @@
       </p>
 
       <p>
-        External libraries may be loaded from a CDN. Your browser
-        may make network requests to retrieve those libraries.
-        No personal data collection or storage system is implemented
-        by this frontend.
+        External libraries may be loaded from a CDN.
+        Your browser may make network requests to retrieve
+        those libraries. No personal data collection or
+        storage system is implemented by this frontend.
       </p>
 
       <p>
@@ -404,9 +635,13 @@
 
 
     <!-- CONTACT -->
-    <section class="content-section" id="contact">
+    <section
+      class="content-section"
+      id="contact">
 
-      <h2>Contact Us</h2>
+      <h2>
+        Contact Us
+      </h2>
 
       <p>
         Have questions or suggestions about Compressify?
@@ -428,10 +663,14 @@
     </section>
 
 
-    <!-- TERMS -->
-    <section class="content-section" id="terms">
+    <!-- TERMS AND CONDITIONS -->
+    <section
+      class="content-section"
+      id="terms">
 
-      <h2>Terms and Conditions</h2>
+      <h2>
+        Terms and Conditions
+      </h2>
 
       <p>
         Compressify is provided as a browser-based file processing
@@ -471,6 +710,8 @@
       <a href="#about">About</a>
       <a href="#privacy">Privacy Policy</a>
       <a href="#contact">Contact</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
       <a href="#terms">Terms</a>
 
     </div>
@@ -482,4 +723,5 @@
   <script src="./script.js"></script>
 
 </body>
+
 </html>
