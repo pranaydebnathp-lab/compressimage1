@@ -140,30 +140,39 @@ function resetResult() {
 }
 
 
+
 // =========================================
-// FILE TYPE CHANGE
+// FILE TYPE CHANGE - PDF FIX
 // =========================================
 
 fileType.addEventListener("change", function () {
 
+  // Reset the previous file
   resetFile();
 
-  const selectedType = fileType.value;
-
-  if (selectedType === "image") {
+  if (fileType.value === "image") {
 
     imageSettings.hidden = false;
     pdfSettings.hidden = true;
 
+    // Show image files
     fileInput.accept =
-      "image/jpeg,image/png,image/webp";
+      ".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp";
 
-  } else {
+    console.log("Image file mode");
+
+  }
+
+  else if (fileType.value === "pdf") {
 
     imageSettings.hidden = true;
     pdfSettings.hidden = false;
 
-    fileInput.accept = "application/pdf";
+    // Show PDF files
+    fileInput.accept =
+      ".pdf,application/pdf";
+
+    console.log("PDF file mode");
 
   }
 
